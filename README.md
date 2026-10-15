@@ -5,6 +5,7 @@
 [![相机](https://img.shields.io/badge/机型-Sony%20NEX--5T-informational)]()
 [![固件](https://img.shields.io/badge/固件-1.00-informational)]()
 [![APK](https://img.shields.io/badge/APK-11.6%20KB-success)]()
+[![下载](https://img.shields.io/github/v/release/yinguobing/nex5t-clean-hdmi?label=%E4%B8%8B%E8%BD%BD&color=brightgreen)](https://github.com/yinguobing/nex5t-clean-hdmi/releases/latest)
 
 ---
 
@@ -32,10 +33,21 @@ NEX-5T 通过 HDMI 输出时，画面上会强制叠加一层信息（快门/光
 
 ### 2. 安装应用
 
-用 [Sony-PMCA-RE](https://github.com/ma1uta/Sony-PMCA-RE) 或 [pmca-console](https://github.com/ThirteenAG/Sony-PMCA-RE)
-把 [`dist/CleanHDMI.apk`](dist/) 装到相机（相机需处于 MTP 模式）。
+**从 [Releases](https://github.com/yinguobing/nex5t-clean-hdmi/releases/latest) 下载 `CleanHDMI.apk`**，
+然后用 PMCA 工具装到相机（相机需处于 MTP 模式）：
 
-> 也可以直接用本仓库的 [`tools/build-apk.sh`](tools/build-apk.sh) 自行构建。
+```bash
+pmca-console install -f CleanHDMI.apk
+```
+
+PMCA 工具：[Sony-PMCA-RE](https://github.com/ma1uta/Sony-PMCA-RE) / [pmca-console](https://github.com/ThirteenAG/Sony-PMCA-RE)
+
+> **下载后建议校验**（Release 页面附有 SHA-256）：
+> ```bash
+> sha256sum CleanHDMI.apk
+> ```
+>
+> 想自己构建的话，见下面的「[自己构建](#自己构建)」。
 
 ### 3. 使用
 
@@ -221,6 +233,9 @@ export CLEANHDMI_KSPASS='<你的口令>'
 │   └── clean-osd/             死路实验：DisplayManager.controlGraphicsOutputAll()
 └── tools/                     构建脚本与逆向调查工具
 ```
+
+> **构建好的 APK 在 [Releases](https://github.com/yinguobing/nex5t-clean-hdmi/releases) 里**，不放在仓库内
+> —— 避免二进制进 git 历史，也避免两份副本日后不一致。
 
 ### 调查工具
 

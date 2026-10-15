@@ -26,3 +26,4 @@ fw/
 .idea/
 *.swp
 .DS_Store
+.release-notes.md
