@@ -1,0 +1,28 @@
+# 构建产物
+build/
+build-*/
+.build/
+gen/
+*.pyc
+__pycache__/
+
+# 密钥库 —— 绝不入库
+*.keystore
+*.jks
+
+# 固件与索尼材料 —— 本仓库不包含
+fw/
+*.odex
+*.uxc
+*.dmg
+*.bin
+
+# APK 只允许 dist/ 下的成品
+*.apk
+!dist/*.apk
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+*.swp
+.DS_Store
